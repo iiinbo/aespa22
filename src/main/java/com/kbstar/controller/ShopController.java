@@ -42,12 +42,12 @@ public class ShopController {
         try {
             list = productService.get();
 
-
         } catch (Exception e) {
             throw new Exception("/shop 상품 전체조회 중 오류가 발생했습니다.");
         }
         // list에 담은 Product를 브라우저 화면에 보여주기(jsp파일에 입력 시 명칭 allproduct)
         model.addAttribute("allproduct", list);
+
         // center에 shop 페이지 표출
         model.addAttribute("center", dir + "center");
         //model.addAttribute("header",dir +"header");

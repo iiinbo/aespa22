@@ -201,6 +201,12 @@ public class MainController {
             return "index";
         }
     }
+    // 장바구니에 product 추가
+    @RequestMapping("/addcart")
+    public Object addcart(Model model, Cart cart) throws Exception {
+        cartService.register(cart);
+        return "redirect:/shop/"; // shop의 한번에보기 페이지로 바로 이동.
+    }
 }
 
 

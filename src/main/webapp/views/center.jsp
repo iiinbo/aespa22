@@ -114,9 +114,7 @@
 										<i class="tf-ion-ios-search-strong"></i>
 									</span>
                   </li>
-                  <li>
-                    <a href="#!" ><i class="tf-ion-ios-heart"></i></a>
-                  </li>
+
                   <li>
                     <a href="#!"><i class="tf-ion-android-cart"></i></a>
                   </li>
@@ -164,12 +162,12 @@
                         <%--  로그인 고객 : 장바구니 담기 클릭 시 cart로 자동 담김.  --%>
                       <c:choose>
                         <c:when test="${loginuser == null}">
+                          <a href="/shop/detail?product_id=${obj.product_id}" class="btn btn-transparent">상품 자세히보기</a>
                           <a href="/login" class="btn btn-main btn-large"> 장바구니에 담기</a>
-                          <a href="product-single.html" class="btn btn-transparent">View Product Details</a>
                         </c:when>
                         <c:otherwise>
-                          <button type="submit" class="btn btn-main" id="cart_addbtn"> 장바구니에 담기</button>
-                          <a href="product-single.html" class="btn btn-transparent">View Product Details</a>
+                          <a href="/shop/detail?product_id=${obj.product_id}" class="btn btn-transparent">상품 자세히보기</a>
+                          <button type="submit" class="btn btn-main default" id="cart_addbtn"> 장바구니에 담기</button>
                         </c:otherwise>
                       </c:choose>
 

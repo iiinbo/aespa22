@@ -31,6 +31,8 @@
                 }
             });
         });
+</script>
+<script>
         // search 기능
         function enterkey() {
             if (window.event.keyCode == 13) {
@@ -39,7 +41,7 @@
                 $("#search-form").submit();
             }
         }
-    </script>
+</script>
 
 <!-- Start Top Header Bar -->
 <section class="top-header">

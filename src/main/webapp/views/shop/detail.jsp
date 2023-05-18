@@ -74,27 +74,17 @@
       <div class="col-md-7">
         <div class="single-product-details">
           <h2>${detail.product_name}</h2>
-          <p class="product-price">${detail.product_price}</p>
-
-          <p class="product-description mt-20">
+          <p class="product-description md-20">
             ${detail.product_contents}
           </p>
+          <div class="product-price"><strong>
+          <span>가격 : <span >${detail.product_price}</span></span>
+          </strong></div><br>
           <div class="color-swatches">
-            <span>color:</span>
-            <ul>
-              <li>
-                <a href="#!" class="swatch-violet"></a>
-              </li>
-              <li>
-                <a href="#!" class="swatch-black"></a>
-              </li>
-              <li>
-                <a href="#!" class="swatch-cream"></a>
-              </li>
-            </ul>
+           <span style="width: 200px"> ${detail.product_Material}</span>
           </div>
           <div class="product-size">
-            <span>Size:</span>
+            <span>규격 : </span>
             <select class="form-control">
               <option>S</option>
               <option>M</option>
@@ -103,7 +93,7 @@
             </select>
           </div>
           <div class="product-quantity">
-            <span>Quantity:</span>
+            <span>수량 : </span>
             <div class="product-quantity-slider">
               <input id="product-quantity" type="text" value="0" name="product-quantity">
             </div>
@@ -115,7 +105,17 @@
               <li><a href="product-single.html">Soap</a></li>
             </ul>
           </div>
-          <a href="cart.html" class="btn btn-main mt-20">Add To Cart</a>
+          <br>
+          <%--  미로그인 고객 : 장바구니 담기 클릭 시 login 이동  --%>
+          <%--  로그인 고객 : 장바구니 담기 클릭 시 cart로 자동 담김.  --%>
+          <c:choose>
+            <c:when test="${loginuser == null}">
+               <a href="/login" class="btn btn-main btn-large"> 장바구니에 담기</a>
+            </c:when>
+            <c:otherwise>
+                <button type="submit" class="btn btn-main default" id="cart_addbtn"> 장바구니에 담기</button>
+            </c:otherwise>
+          </c:choose>
         </div>
       </div>
     </div>
