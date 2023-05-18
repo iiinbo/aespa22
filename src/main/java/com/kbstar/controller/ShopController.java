@@ -198,5 +198,11 @@ public class ShopController {
         model.addAttribute("center", dir + "detail");
         return "index";
     }
+    @RequestMapping("/confirmation")
+    public String confirmation(Model model) throws Exception {
+        // center에 shop 페이지 표출
+        model.addAttribute("center",    "confirmation");
+        return "index";
+    }
 
 }

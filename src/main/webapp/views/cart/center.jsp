@@ -82,7 +82,7 @@
                     <h3 style="text-align: right" ><strong> 총 결제 금액 ₩ <fmt:formatNumber value="${total}" pattern="###,###" /></strong></h3>
                     <br>
                     <a href="/shop" class="btn btn-main pull-center">다른상품 보러가기</a>
-                    <a href="/order" class="btn btn-main pull-right">주문하기</a>
+                    <a href="/shop/confirmation" class="btn btn-main pull-right">주문하기</a>
                     <%-- 주문할 항목만 선택할 수 있게 체크박스 넣어보기. --%>
                   </form>
                 </div>

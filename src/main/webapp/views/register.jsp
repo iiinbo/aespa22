@@ -1,7 +1,7 @@
 <%--@@include('header.htm')--%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<jsp:include page="/views/header.jsp" />
+<%--<jsp:include page="/views/header.jsp" />--%>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <!--kakao -->
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
@@ -36,8 +36,10 @@
           <div class="form-group">
             <label for="user_pwd" class="col-lg-2 control-label">비밀번호</label>
             <div class="col-lg-10">
-              <input type="password" class="form-control" id="user_pwd" name="user_pwd" placeholder="비밀번호를 입력하세요." required>
+              <input type="password" class="form-control" id="user_pwd" name="user_pwd" placeholder="8자리 이상 비밀번호를 입력하세요." required>
+                <div id="pwd_result"></div>
             </div>
+
           </div>
           <div class="form-group">
             <label for="user_name" class="col-lg-2 control-label">이름</label>

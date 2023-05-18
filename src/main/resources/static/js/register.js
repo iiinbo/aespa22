@@ -8,6 +8,14 @@ let register_form = {
             let user_gender = $("#user_gender option:selected").val;
             let user_address = $("#user_address").val;
             let user_birthday = $("#user_birthday").val;
+            console.log("user_pwd.length---------------------------------");
+            console.log(user_pwd.length());
+            console.log("user_pwd.length---------------------------------");
+            if(user_pwd.length() < 8 ){
+                document.getElementById("pwd_result").innerHTML = "비밀번호를 8자리 이상입력해주세요.";
+                alert("비밀번호를 8자리 이상 입력해주세요");
+                return;
+            }
             register_form.send();
         });
     },
