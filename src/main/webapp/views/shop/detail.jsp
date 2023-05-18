@@ -72,6 +72,10 @@
         </div>
       </div>
       <div class="col-md-7">
+<%-- 장바구니에 추가하는 기능이 페이지에 있을 땐, from 태그와, input hidden이 꼭 있어야해  --%>
+        <form id="cart_form" action="/addcart" method="get">
+          <input type="hidden" name="user_id" value="${loginuser.user_id}"/>
+          <input type="hidden" name="product_id" value="${detail.product_id}"/>
         <div class="single-product-details">
           <h2>${detail.product_name}</h2>
           <p class="product-description md-20">
@@ -95,16 +99,11 @@
           <div class="product-quantity">
             <span>수량 : </span>
             <div class="product-quantity-slider">
-              <input id="product-quantity" type="text" value="0" name="product-quantity">
+              <input type="number" class="form-control" id="cart_quantity" name="cart_quantity" placeholder="수량 선택" >
             </div>
           </div>
-          <div class="product-category">
-            <span>Categories:</span>
-            <ul>
-              <li><a href="product-single.html">Products</a></li>
-              <li><a href="product-single.html">Soap</a></li>
-            </ul>
-          </div>
+          <br>
+          <br>
           <br>
           <%--  미로그인 고객 : 장바구니 담기 클릭 시 login 이동  --%>
           <%--  로그인 고객 : 장바구니 담기 클릭 시 cart로 자동 담김.  --%>
@@ -117,6 +116,7 @@
             </c:otherwise>
           </c:choose>
         </div>
+        </form>
       </div>
     </div>
     <div class="row">

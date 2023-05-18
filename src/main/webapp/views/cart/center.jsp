@@ -58,10 +58,10 @@
                           <tr class="">
                             <td class="">
                               <div class="product-info">
-                                <a href="#!"><img width="130" src="/img/${obj.product_imgname}" alt="" /></a>
+                                <a href="/shop/detail?product_id=${obj.product_id}"><img width="130" src="/img/${obj.product_imgname}" alt="" /></a>
                               </div>
                             </td>
-                            <td><a href="#!">${obj.product_name}</a></td>
+                            <td><a href="/shop/detail?product_id=${obj.product_id}">${obj.product_name}</a></td>
                             <td class="">${obj.cart_quantity}</td>
                             <td class=""><fmt:formatNumber value="${obj.product_price}" pattern="₩ ###,###" /></td>
 

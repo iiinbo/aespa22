@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
+<!-- header 구간  -->
+<jsp:include page="/views/header.jsp" />
 <section class="page-404">
 		<div class="container">
 			<div class="row">

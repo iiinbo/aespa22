@@ -56,18 +56,13 @@
 									</span>
 
                   </li>
-<%--                  <li>--%>
-<%--                    <a href="#!" ><i class="tf-ion-ios-heart"></i></a>--%>
-<%--                  </li>--%>
-                  <li>
-                    <a href="/cart?user_id=${loginuser.user_id}"><i class="tf-ion-android-cart"></i></a>
-                  </li>
+
                 </ul>
               </div>
             </div>
           </div>
           <div class="product-content">
-            <h4><a href="product-single.html">${obj.product_name}</a></h4>
+            <h4><a href="/shop/detail?product_id=${obj.product_id}">${obj.product_name}</a></h4>
             <p class="price"><fmt:formatNumber value="${obj.product_price}" type="number" pattern="₩ ###,###" /></p>
           </div>
 
