@@ -4,6 +4,7 @@ package com.kbstar.controller;
 import ch.qos.logback.classic.Logger;
 import com.kbstar.dto.Cart;
 import com.kbstar.dto.Product;
+import com.kbstar.dto.ProductSearch;
 import com.kbstar.dto.User;
 import com.kbstar.service.CartService;
 import com.kbstar.service.ProductService;
@@ -175,5 +176,31 @@ public class MainController {
         }
         return "success";
     }
+    @RequestMapping(value = "/search", method = RequestMethod.GET)
+    public String search(@RequestParam("product_name") String productName, Model model) {
+        try {
+            ProductSearch ps = new ProductSearch();
+            log.info("aaaaaaaaaaaa검색어");
+            log.info(productName);
 
+            ps.setProduct_name(productName); // 검색어 설정
+            log.info("cccccccccccccccccccc");
+            log.info(productService.search(ps).toString());
+            List<Product> productList = productService.search(ps); // 상품 검색 수행
+            log.info("aaaaaaaaaaaaaaaaaaaaaaaaaa00");
+            log.info(productList.toString());
+            model.addAttribute("plist", productList);
+            model.addAttribute("center", dir + "searchcenter");
+
+            return "shop/searchcenter"; // 검색 결과를 보여주는 화면으로 이동
+
+        } catch (Exception e) {
+            // 예외 처리 로직
+            e.printStackTrace();
+            // 에러 페이지로 이동
+            return "redirect:/searchfail";
+        }
+    }
 }
+
+

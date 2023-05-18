@@ -1,6 +1,7 @@
 package com.kbstar.service;
 
 import com.kbstar.dto.Product;
+import com.kbstar.dto.ProductSearch;
 import com.kbstar.frame.AespaService;
 import com.kbstar.mapper.ProductMapper;
 import lombok.extern.slf4j.Slf4j;
@@ -81,5 +82,10 @@ public class ProductService implements AespaService<Integer, Product> {
     // 카테고리별 조회하기 1. 캐쥬얼
     public List<Product> selectwedding() throws Exception {
         return productMapper.selectwedding();
+    }
+    public List<Product> search(ProductSearch ps) throws Exception {
+        log.info("bbbbbbbbbbbbbbbbbbbbbbbbbbbb");
+        log.info(ps.toString());
+        return productMapper.search(ps);
     }
 }

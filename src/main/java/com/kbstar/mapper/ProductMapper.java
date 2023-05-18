@@ -1,6 +1,7 @@
 package com.kbstar.mapper;
 
 import com.kbstar.dto.Product;
+import com.kbstar.dto.ProductSearch;
 import com.kbstar.frame.AespaMapper;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
@@ -28,4 +29,5 @@ public interface ProductMapper extends AespaMapper<Integer, Product> {
     public List<Product> selectgift();
     // 카테고리별 조회하기 3.웨딩
     public List<Product> selectwedding();
+    public List<Product> search(ProductSearch ms);
 }
