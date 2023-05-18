@@ -192,13 +192,13 @@ public class MainController {
             model.addAttribute("plist", productList);
             model.addAttribute("center", dir + "searchcenter");
 
-            return "shop/searchcenter"; // 검색 결과를 보여주는 화면으로 이동
+            return "index"; // 검색 결과를 보여주는 화면으로 이동
 
         } catch (Exception e) {
             // 예외 처리 로직
             e.printStackTrace();
             // 에러 페이지로 이동
-            return "redirect:/searchfail";
+            return "index";
         }
     }
 }

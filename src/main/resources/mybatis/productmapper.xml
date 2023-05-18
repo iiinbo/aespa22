@@ -79,6 +79,13 @@
     <select id="selectall" resultType="product">
         SELECT * FROM product
     </select>
-
+    <select id="search" parameterType="ProductSearch" resultType="Product">
+        SELECT * FROM product
+        <where>
+            <if test="product_name != null and !product_name.equals('') ">
+                AND product_name LIKE '%'||#{product_name}||'%'
+            </if>
+        </where>
+    </select>
 
 </mapper>
