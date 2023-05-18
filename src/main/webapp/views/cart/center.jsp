@@ -66,7 +66,7 @@
                             <td class=""><fmt:formatNumber value="${obj.product_price}" pattern="₩ ###,###" /></td>
 
                             <c:set var="middletotal" value="${middletotal = (obj.cart_quantity * obj.product_price) }" />
-                            <td class="">₩ <fmt:formatNumber value="${middletotal}" pattern="###,###" /></td>
+                            <td class=""><fmt:formatNumber value="${middletotal}" pattern="₩ ###,###" /></td>
                             <c:set var="total" value="${total + (obj.cart_quantity * obj.product_price) }" />
                             <td class="">
                               <a class="product-remove" href="/cart/remove?product_id=${obj.product_id}">삭제하기</a>
@@ -82,7 +82,7 @@
                     <h3 style="text-align: right" ><strong> 총 결제 금액 ₩ <fmt:formatNumber value="${total}" pattern="###,###" /></strong></h3>
                     <br>
                     <a href="/shop" class="btn btn-main pull-center">다른상품 보러가기</a>
-                    <a href="/shop/confirmation" class="btn btn-main pull-right">주문하기</a>
+                    <a href="/shop/order?user_id=${loginuser.user_id}" class="btn btn-main pull-right">주문하기</a>
                     <%-- 주문할 항목만 선택할 수 있게 체크박스 넣어보기. --%>
                   </form>
                 </div>

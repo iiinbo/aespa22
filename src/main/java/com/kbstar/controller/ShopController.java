@@ -1,8 +1,10 @@
 package com.kbstar.controller;
 
 
+import com.kbstar.dto.Cart;
 import com.kbstar.dto.Product;
 import com.kbstar.dto.Productdetail;
+import com.kbstar.service.CartService;
 import com.kbstar.service.ProductService;
 import com.kbstar.service.ProductdetailService;
 import lombok.extern.slf4j.Slf4j;
@@ -12,6 +14,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 // 컨트롤러 설명 : Product에 대한 기능을 담당하는 곳.
@@ -25,6 +28,8 @@ public class ShopController {
     ProductService productService;
     @Autowired
     ProductdetailService productdetailService;
+    @Autowired
+    CartService cartService;
 
     @Value("${uploadimgdir}") // 이렇게 세팅하면, 애플리케이션 프로퍼티에  정해둔, simg/ 폴더에 집어넣는다.
     String imgdir;
@@ -201,7 +206,21 @@ public class ShopController {
     @RequestMapping("/confirmation")
     public String confirmation(Model model) throws Exception {
         // center에 shop 페이지 표출
-        model.addAttribute("center",    "confirmation");
+        model.addAttribute("center",   "confirmation");
+        return "index";
+    }
+
+    @RequestMapping("/order")
+    public String order(Model model, String user_id, Cart cart) throws Exception {
+        // center에 order 페이지 표출
+        List<Cart> list = null; // 카트 정보 불러올 바구니 준비.
+        try {
+            list = cartService.getmycart( user_id ); // 카트 정보를 list에 담기.
+        } catch (Exception e) {
+            throw new Exception(e);
+        }
+        model.addAttribute("mycart", list);
+        model.addAttribute("center",  dir + "order");
         return "index";
     }
 

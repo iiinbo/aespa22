@@ -120,7 +120,7 @@
                             </div>
                             <ul class="text-center cart-buttons">
                                 <li><a href="/cart?user_id=${loginuser.user_id}" class="btn btn-small">자세히 보기</a></li>
-                                <li><a href="#order" class="btn btn-small btn-solid-border">주문하기</a></li>
+                                <li><a href="/shop/order?user_id=${loginuser.user_id}" class="btn btn-small btn-solid-border">주문하기</a></li>
                             </ul>
                         </div>
 
