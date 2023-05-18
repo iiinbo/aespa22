@@ -1,6 +1,7 @@
 <%--@@include('header.htm')--%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<jsp:include page="/views/header.jsp" />
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <!--kakao -->
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
@@ -57,16 +58,18 @@ update_form.init();
           <div class="form-group">
             <label for="user_birthday" class="col-lg-2 control-label">생년월일</label>
             <div class="col-lg-10">
-              <input type="date" id="user_birthday" name="user_birthday"value="${loginuser.user_birthday}"/>
+              <input type="text" id="user_birthday" name="user_birthday" value ="${loginuser.user_birthday.split(' ')[0]}"/>
             </div>
           </div>
           <div class="form-group">
             <label for="user_gender" class="col-lg-2 control-label">성별</label>
             <div class="col-lg-10">
-              <select class="form-control" id="user_gender" name="user_gender" value="${loginuser.user_gender}" required>
-                <option value="" disabled selected>성별을 선택하세요.</option>
-                <option value="m">남성</option>
-                <option value="f">여성</option>
+              <select class="form-control" id="user_gender" name="user_gender" value="${loginuser.user_gender}option:selected" required>
+<%--                <option value="" disabled selected>성별을 선택하세요.</option>--%>
+<%--                <option value="m">남성</option>--%>
+<%--                <option value="f">여성</option>--%>
+            <option value="m" ${loginuser.user_gender == 'm' ? 'selected' : ''}>남성</option>
+            <option value="f" ${loginuser.user_gender == 'f' ? 'selected' : ''}>여성</option>
               </select>
             </div>
           </div>

@@ -12,6 +12,7 @@ import com.kbstar.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -34,6 +35,8 @@ public class MainController {
     UserService userService;
     @Autowired
     CartService cartService;
+    @Autowired
+    private BCryptPasswordEncoder encoder;
     Logger logger;
     String dir = "shop/";
     // 0- 초기화면 : 127.0.0.1
@@ -71,7 +74,7 @@ public class MainController {
 
         try {
             User user = userService.get(user_id);
-            if (user != null && user.getUser_pwd().equals(user_pwd)) {
+            if (user != null && encoder.matches(user_pwd, user.getUser_pwd())) {
                 session.setMaxInactiveInterval(100000);
                 session.setAttribute("loginuser", user);
                 session.setAttribute("allproduct", list);
@@ -106,8 +109,12 @@ public class MainController {
             }
             throw new Exception("형식 오류"+errors.toString());
         }
+             user.setUser_pwd(encoder.encode(user.getUser_pwd())); // 비밀번호 암호화
         try {
+            List<Product> list = null;
+            list = productService.get();
             userService.register(user);
+            session.setAttribute("allproduct", list);
             session.setAttribute("loginuser",user);
         } catch (Exception e) {
             throw new Exception("가입 오류");
@@ -206,6 +213,11 @@ public class MainController {
     public Object addcart(Model model, Cart cart) throws Exception {
         cartService.register(cart);
         return "redirect:/shop/"; // shop의 한번에보기 페이지로 바로 이동.
+    }
+    @RequestMapping("/404")
+    public String page404(Model model){
+        model.addAttribute("center", "404"); // center에 login페이지 표출
+        return "index";
     }
 }
 

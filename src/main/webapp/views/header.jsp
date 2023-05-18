@@ -257,9 +257,9 @@
                            role="button" aria-haspopup="true" aria-expanded="false">Service <span
                                 class="tf-ion-ios-arrow-down"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="typography.html">매장찾기</a></li>
-                            <li><a href="buttons.html">수리문의</a></li>
-                            <li><a href="alerts.html">Contect</a></li>
+                            <li><a href="/404">매장찾기</a></li>
+                            <li><a href="/404">수리문의</a></li>
+                            <li><a href="/404">Contact</a></li>
                         </ul>
                     </li><!-- / Blog -->
                 </ul><!-- / .nav .navbar-nav -->

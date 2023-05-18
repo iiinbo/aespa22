@@ -1,6 +1,7 @@
 <%--@@include('header.htm')--%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<jsp:include page="/views/header.jsp" />
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <!--kakao -->
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
@@ -56,8 +57,8 @@
             <label for="user_address" class="col-lg-2 control-label">주소</label>
             <div class="col-lg-10">
 <%--              <input type="text" class="form-control" id="user_address" name="user_address" placeholder="주소를 입력하세요." required>--%>
-                  <input type="text" id="user_address" name="user_address"  placeholder="주소">
-                  <input type="button" onclick="sample5_execDaumPostcode()" value="주소 검색"><br>
+                  <input type="text" id="user_address" name="user_address"  placeholder="주소" style="width: 80%;">
+                  <input class="address_button" type="button" onclick="sample5_execDaumPostcode()" value="주소 검색"><br>
                   <div id="map" style="width:300px;height:300px;margin-top:10px;display:none"></div>
             </div>
           </div>
@@ -79,7 +80,7 @@
           </div>
           <div class="form-group">
             <div class="col-lg-10 col-lg-offset-2">
-              <button type="button" id="register_btn" class="btn btn-primary">회원가입</button>
+              <button type="button" class="register_btn"  id="register_btn" style="margin-left: 40%">회원가입</button>
             </div>
           </div>
         </fieldset>
@@ -97,9 +98,20 @@
         height: 40px;
         width: 70px;
         cursor: pointer;
+
+
     }
 
-
+    input[type="button"] {
+        background-color: #79c5b5; /* 티파니앤코 민트색 */
+        color: #fff;
+        border: none; /* 테두리 제거 */
+        font-size: 6px;
+        border-radius: 5px; /* 버튼 라운드 처리 */
+        height: 40px;
+        width: 70px;
+        cursor: pointer;
+    }
 </style>
 
 

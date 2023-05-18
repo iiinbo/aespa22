@@ -25,7 +25,7 @@ public class UpdateTest {
     ProductService service;
     @Test
     void contextLoads(){
-        Product product = new Product(1000, "마더펄 서클이어링", 3260000, null,"tiffany_earring1.jpg", 101);
+        Product product = new Product(1016, "T1링", 60000, null,"tiffany_earring9.jpg", 101);
 
         try {
                 service.modify(product);

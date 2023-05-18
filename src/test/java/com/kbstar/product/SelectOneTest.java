@@ -25,7 +25,7 @@ public class SelectOneTest {
     @Test
     void contextLoads(){
         try {
-                service.get(1001);
+                service.get();
             log.info("=========== Aespa 판매 상품 중 특정 1건 조회 완료============");
         } catch (Exception e) {
             log.info("에러...");
