@@ -2,7 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--JSTL : 통화 날짜를 표현하게 해주는 문법--%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 
 <!--
@@ -16,6 +16,7 @@
 
 
     <script>
+        // cart 모달
         $(document).ready(function() {
             // AJAX를 통해 서버로 데이터 요청
             $.ajax({
@@ -30,6 +31,14 @@
                 }
             });
         });
+        // search 기능
+        function enterkey() {
+            if (window.event.keyCode == 13) {
+
+                // 엔터키가 눌렸을 때 실행하는 반응
+                $("#search-form").submit();
+            }
+        }
     </script>
 
 <!-- Start Top Header Bar -->
@@ -146,7 +155,9 @@
                                 class="tf-ion-ios-search-strong"></i> Search</a>
                         <ul class="dropdown-menu search-dropdown">
                             <li>
-                                <form action="post"><input type="search" class="form-control" placeholder="Search..."></form>
+                                <form id="search-form" action="/search">
+                                    <input onkeyup="enterkey();" type="search" class="form-control" name="product_name" placeholder="검색하세요...">
+                                </form>
                             </li>
                         </ul>
                     </li><!-- / Search -->

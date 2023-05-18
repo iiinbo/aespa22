@@ -16,10 +16,10 @@
           <a class="logo" href="/">
             <img src="images/logo.png" alt="" width="110px">
           </a>
-          <h2 class="text-center">Welcome</h2>
+          <h5 class="text-center">로그인 후 서비스를 이용해주세요 !</h5>
 
           <form id="login_form" class="text-left clearfix" ><%-- Main Controller --%>
-          <%-- form : button type="button" --%>
+            <%-- form : button type="button" --%>
             <div class="form-group">
               <input type="text" class="form-control"  placeholder="ID" name="user_id" id="user_id" placeholder="ID를 입력해 주세요"/>
             </div>
@@ -36,4 +36,3 @@
     </div>
   </div>
 </section>
-
