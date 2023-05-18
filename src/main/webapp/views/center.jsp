@@ -114,10 +114,6 @@
 										<i class="tf-ion-ios-search-strong"></i>
 									</span>
                   </li>
-
-                  <li>
-                    <a href="#!"><i class="tf-ion-android-cart"></i></a>
-                  </li>
                 </ul>
               </div>
             </div>

@@ -29,7 +29,7 @@ update_form.init();
           <div class="form-group">
             <label for="user_pwd" class="col-lg-2 control-label">비밀번호</label>
             <div class="col-lg-10">
-              <input type="password" class="form-control" id="user_pwd" name="user_pwd" value="${loginuser.user_pwd}" required>
+              <input type="password" class="form-control" id="user_pwd" name="user_pwd" placeholder="비밀번호를 입력해주세요" required>
             </div>
           </div>
           <div class="form-group">
@@ -75,7 +75,7 @@ update_form.init();
           </div>
           <div class="form-group">
             <div class="col-lg-10 col-lg-offset-2">
-              <button type="button" id="update_btn" class="btn btn-primary">정보변경하기</button>
+              <button type="button" id="update_btn" >정보변경하기</button>
             </div>
           </div>
         </fieldset>
@@ -90,15 +90,22 @@ update_form.init();
             font-size: 6px;
             border-radius: 5px; /* 버튼 라운드 처리 */
             height: 40px;
+            width: 100px;
+            cursor: pointer;
+            margin-left: 40%;
+        }
+        input[type="button"] {
+            background-color: #79c5b5; /* 티파니앤코 민트색 */
+            color: #fff;
+            border: none; /* 테두리 제거 */
+            font-size: 6px;
+            border-radius: 5px; /* 버튼 라운드 처리 */
+            height: 40px;
             width: 70px;
             cursor: pointer;
         }
 
-
     </style>
-
-
-
 
 
 

@@ -135,6 +135,7 @@ public class MainController {
             }
             throw new Exception("형식 오류"+errors.toString());
         }
+        user.setUser_pwd(encoder.encode(user.getUser_pwd())); // 비밀번호 암호화
         try {
             userService.modify(user);
             session.setAttribute("loginuser",user);
@@ -219,6 +220,19 @@ public class MainController {
         model.addAttribute("center", "404"); // center에 login페이지 표출
         return "index";
     }
+    @RequestMapping("/about")
+    public String about(Model model){
+        model.addAttribute("center", "about"); // center에 login페이지 표출
+        return "index";
+    }
+    @RequestMapping("/address")
+    public String address(Model model, HttpSession session) throws Exception {
+        User user = (User) session.getAttribute("loginuser");
+        session.setAttribute("loginuser", user);
+        model.addAttribute("center", "address"); // center에 login페이지 표출
+        return "index";
+    }
 }
+
 
 

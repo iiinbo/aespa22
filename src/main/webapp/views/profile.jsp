@@ -6,9 +6,8 @@
     <div class="row">
       <div class="col-md-12">
         <ul class="list-inline dashboard-menu text-center">
-          <li><a href="/404">Dashboard</a></li>
-          <li><a href="/404">주문</a></li>
-          <li><a href="/404">주소</a></li>
+          <li><a href="/about">about AESPA</a></li>
+          <li><a href="/address">주소관리</a></li>
           <li><a class="active"  href="/changeInfo">내 정보</a></li>
         </ul>
         <div class="dashboard-wrapper dashboard-user-profile">
