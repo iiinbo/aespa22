@@ -85,7 +85,7 @@
                             <a href="/login" ><i class="tf-ion-android-cart"></i> Cart</a>
                         </c:when>
                         <c:otherwise>
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"><i
+                        <a href="/cart?user_id=${loginuser.user_id}" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"><i
                                 class="tf-ion-android-cart"></i> Cart</a>
                         <div class="dropdown-menu cart-dropdown">
                             <div id="cartItems">
@@ -96,7 +96,7 @@
                                         <img class="media-object" src="/img/${cartItem.product_imgname}" alt="image" />
                                     </a>
                                     <div class="media-body">
-                                        <h4 class="media-heading"><a href="#!"><strong>${cartItem.product_name}</strong></a></h4>
+                                        <h4 class="media-heading"><a href="/cart?user_id=${loginuser.user_id}"><strong>${cartItem.product_name}</strong></a></h4>
                                         <div class="cart-price">
 
                                             <span><fmt:formatNumber value="${cartItem.product_price}" pattern="₩ ###,###" /></span>
@@ -107,7 +107,7 @@
                                         <input type="hidden"${cartItem.product_id} />
                                     </div>
                                 </div>
-                                <a href="#!" class="remove"><i class="tf-ion-close"></i></a>
+                                <a href="/cart?user_id=${loginuser.user_id}" class="remove"><i class="tf-ion-close"></i></a>
                                 <c:set var="total" value="${total + (cartItem.cart_quantity * cartItem.product_price) }" />
                             </c:forEach>
                             <!-- 나머지 드롭다운 메뉴 요소들 -->

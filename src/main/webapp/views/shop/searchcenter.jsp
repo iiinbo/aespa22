@@ -4,6 +4,21 @@
 <jsp:include page="/views/header.jsp" />
 
 
+<section class="page-header">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="content">
+          <h1 class="page-name">Shop</h1>
+          <ol class="breadcrumb">
+            <li><a href="/">Home</a></li>
+            <li class="active"><a href="/shop">shop</a></li>
+            <li class="active"><a href="/shop?category_id=${obj.category_id}"> Product Category</a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 <!-- 하단 상품 보기 -->
 <section class="products section bg-gray">
@@ -25,9 +40,9 @@
               <div class="preview-meta">
                 <ul>
                   <li>
-									<span  data-toggle="modal" data-target="#product-modal${obj.product_id}">
-										<i class="tf-ion-ios-search-strong"></i>
-									</span>
+                              <span  data-toggle="modal" data-target="#product-modal${obj.product_id}">
+                                  <i class="tf-ion-ios-search-strong"></i>
+                              </span>
                   </li>
 
                 </ul>
@@ -35,7 +50,7 @@
             </div>
           </div>
           <div class="product-content">
-            <h4><a href="product-single.html">${obj.product_name}</a></h4>
+            <h4><a href="/shop/detail?product_id=${obj.product_id}">${obj.product_name}</a></h4>
             <p class="price"><fmt:formatNumber value="${obj.product_price}" type="number" pattern="₩ ###,###" /></p>
           </div>
 
@@ -52,7 +67,7 @@
           <div class="modal-content">
             <div class="modal-body">
               <div class="row">
-
+                <form id="cart_form" action="/addcart" method="get">
                 <div class="col-md-8 col-sm-6 col-xs-12">
                   <div class="modal-image">
                     <img class="img-responsive" src="/img/${obj.product_imgname}" alt="product-img" />
@@ -60,16 +75,30 @@
                 </div>
                 <div class="col-md-4 col-sm-6 col-xs-12">
                   <div class="product-short-details">
+                    <input type="hidden" name="user_id" value="${loginuser.user_id}"/>
+                    <input type="hidden" name="product_id" value="${obj.product_id}"/>
                     <h2 class="product-title">${obj.product_name}</h2>
                     <p class="product-price"><fmt:formatNumber value="${obj.product_price}" type="number" pattern="₩ ###,###" /></p>
+                    <input type="number" class="form-control" id="cart_quantity" name="cart_quantity" placeholder="수량을 선택하세요" >
                     <p class="product-short-description">
                       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem iusto nihil cum. Illo laborum numquam rem aut officia dicta cumque.
                     </p>
-                    <a href="/cart?user_id=${loginuser.user_id}" class="btn btn-main">장바구니에 담기</a>
-                    <a href="product-single.html" class="btn btn-transparent">View Product Details</a>
+                      <%--  페이지 변환 방식.(ajax로 데이터 보내는 방식 아님..)  --%>
+                      <%--  미로그인 고객 : 장바구니 담기 클릭 시 login 이동  --%>
+                      <%--  로그인 고객 : 장바구니 담기 클릭 시 cart로 자동 담김.  --%>
+                    <c:choose>
+                      <c:when test="${loginuser == null}">
+                        <a href="/shop/detail?product_id=${obj.product_id}" class="btn btn-transparent">상품 자세히보기</a>
+                        <a href="/login" class="btn btn-main btn-large"> 장바구니에 담기</a>
+                      </c:when>
+                      <c:otherwise>
+                        <a href="/shop/detail?product_id=${obj.product_id}" class="btn btn-transparent">상품 자세히보기</a>
+                        <button type="submit" class="btn btn-main default" id="cart_addbtn"> 장바구니에 담기</button>
+                      </c:otherwise>
+                    </c:choose>
                   </div>
                 </div>
-
+                </form>
               </div>
             </div>
           </div>

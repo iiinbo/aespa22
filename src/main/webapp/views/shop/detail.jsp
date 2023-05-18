@@ -16,7 +16,7 @@
         <ol class="breadcrumb">
           <li><a href="/">Home</a></li>
           <li><a href="/shop">Shop</a></li>
-          <li class="active"><a href="/shop?category_id=${category_id}">category</a></li>
+          <li class="active"><a href="/shop?category_id=${obj.category_id}">Product Category</a></li>
         </ol>
       </div>
     </div>

@@ -191,14 +191,14 @@ Start Call To Action
           <h2>SUBSCRIBE TO NEWSLETTER</h2>
           <p>단 한 순간, 가장 아름다운 날의 기억은 반짝임을 아는 것부터 시작됩니다.<br>  AESPA에서 가공하는 다이아몬드 원석이 어떤 광산 및 공급처에서 소싱되었는지 100% 추적할 수 있습니다. </p>
         </div>
-        <div class="col-lg-6 col-md-offset-3">
-          <div class="input-group subscription-form">
-            <input type="text" class="form-control" placeholder="Enter Your Email Address">
-            <span class="input-group-btn">
-				        <button class="btn btn-main" type="button">Subscribe Now!</button>
-				      </span>
-          </div><!-- /input-group -->
-        </div><!-- /.col-lg-6 -->
+<%--        <div class="col-lg-6 col-md-offset-3">--%>
+<%--          <div class="input-group subscription-form">--%>
+<%--            <input type="text" class="form-control" placeholder="Enter Your Email Address">--%>
+<%--            <span class="input-group-btn">--%>
+<%--				        <button class="btn btn-main" type="button">Subscribe Now!</button>--%>
+<%--				      </span>--%>
+<%--          </div><!-- /input-group -->--%>
+<%--        </div><!-- /.col-lg-6 -->--%>
 
       </div>
     </div> 		<!-- End row -->
@@ -209,7 +209,7 @@ Start Call To Action
   <div class="container">
     <div class="row">
       <div class="title">
-        <h2>View us on instagram</h2>
+        <h2></h2>
       </div>
     </div>
     <div class="row">
