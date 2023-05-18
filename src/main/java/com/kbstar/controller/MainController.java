@@ -212,7 +212,13 @@ public class MainController {
     // 장바구니에 product 추가
     @RequestMapping("/addcart")
     public Object addcart(Model model, Cart cart) throws Exception {
+
+        if (cart.getCart_quantity() == null) {
+            log.info("00000000000000000000000000000000000000000000");
+            cart.setCart_quantity(0);
+        }
         cartService.register(cart);
+
         return "redirect:/shop/"; // shop의 한번에보기 페이지로 바로 이동.
     }
     @RequestMapping("/404")

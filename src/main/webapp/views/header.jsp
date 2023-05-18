@@ -260,15 +260,14 @@
                             <li><a href="/404">매장찾기</a></li>
                             <li><a href="/404">수리문의</a></li>
                             <li><a href="/404">Contact</a></li>
-                            <li><a href="/about">About</a></li>
                         </ul>
                     </li><!-- / Blog -->
 
-                    <li class="dropdown dropdown-slide">
-                        <a href="/about" class="dropdown-toggle" data-delay="350"
+                    <li class="menu">
+                        <a href="/about"  data-delay="350"
                            role="button" aria-haspopup="true" aria-expanded="false">About
                             </a>
-                        <ul class="dropdown-menu">
+                        <ul class="menu">
 
                         </ul>
                     </li><!-- / Blog -->

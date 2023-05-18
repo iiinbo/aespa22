@@ -6,11 +6,19 @@
 <script>
   $(document).ready(function() {
     $('#cart_addbtn').on('click', function() {
+      console.log("로그찍기--------------------------------");
       var cartQuantity = $('#cart_quantity').val();
 
-      if (cartQuantity.trim() === '') {
-        alert('상품의 수량을 입력해 주세요');
-        return false; // Prevent form submission
+      // if (cartQuantity.trim() === '') {
+      //   alert('상품의 수량을 입력해 주세요');
+      //   return false; // Prevent form submission
+      // }
+      console.log(cartQuantity);
+      console.log("========");
+      console.log(typeof cartQuantity);
+      if(cartQuantity === undefined || cartQuantity === null){
+        alert('상품의 수량을 입력해주세요');
+        return ;
       }
     });
   });
@@ -54,7 +62,6 @@
                     <span  data-toggle="modal" data-target="#product-modal${obj.product_id}">
                                       <i class="tf-ion-ios-search-strong" ></i>
 									</span>
-
                   </li>
 
                 </ul>
