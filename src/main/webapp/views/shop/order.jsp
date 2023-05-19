@@ -1,7 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-
+<style>
+    #full_name, #user_address, #user_country,#card-number, #card-expiry, #card-cvc, #final_total, #final_total2{
+        color: black;
+        font-weight: bold;
+    }
+</style>
 <!-- header 구간  -->
 <jsp:include page="/views/header.jsp" />
 <!-- center 시작 구간 -->
@@ -30,15 +35,15 @@
                         <form class="checkout-form">
                             <div class="form-group">
                                 <label for="full_name" >받는 분 : </label>
-                                <input type="text" class="form-control" id="full_name"  placeholder="${loginuser.user_id}">
+                                <input type="text" class="form-control" id="full_name" value="${loginuser.user_id}" />
                             </div>
                             <div class="form-group">
                                 <label for="user_address">배송주소 : </label>
-                                <input type="text" class="form-control" id="user_address" placeholder="${loginuser.user_address}">
+                                <input type="text" class="form-control" id="user_address" value="${loginuser.user_address}" />
                             </div>
                             <div class="form-group">
                                 <label for="user_country">연락처 : </label>
-                                <input type="text" class="form-control" id="user_country" placeholder="${loginuser.user_contact}">
+                                <input type="text" class="form-control" id="user_country" value="${loginuser.user_contact}" />
                             </div>
                             <a href="/changeInfo" class="btn btn-main pull-center">내정보 수정하기</a>
                         </form>
@@ -51,16 +56,16 @@
                                 <div class="card-details">
                                     <form  class="checkout-form">
                                         <div class="form-group">
-                                            <label for="card-number">카드번호 : <span class="required">*</span></label>
-                                            <input  id="card-number" class="form-control"   type="tel" placeholder="  9437   • • • •   2581   • • • •  "/>
+                                            <label for="card-number">카드번호 : <span class="required"></span></label>
+                                            <input  id="card-number" class="form-control"   type="tel" value="  9437   • • • •   2581   • • • •  "/>
                                         </div>
                                         <div class="form-group half-width padding-right">
-                                            <label for="card-expiry">만료기간 : <span class="required">*</span></label>
-                                            <input id="card-expiry" class="form-control" type="tel" placeholder="  09 / 26">
+                                            <label for="card-expiry">만료기간 : <span class="required"></span></label>
+                                            <input id="card-expiry" class="form-control" type="tel" value="  09 / 26">
                                         </div>
                                         <div class="form-group half-width padding-left">
-                                            <label for="card-cvc">CVC <span class="required">*</span></label>
-                                            <input id="card-cvc" class="form-control"  type="tel" maxlength="4" placeholder="  ***" >
+                                            <label for="card-cvc">CVC : <span class="required"></span></label>
+                                            <input id="card-cvc" class="form-control"  type="tel" maxlength="4" value="  ***" >
                                         </div>
                                         <a href="/shop" class="btn btn-main pull-center">다른상품 보러가기</a>
 
@@ -106,8 +111,8 @@
                                 </li>
                             </ul>
                             <div class="summary-total">
-                                <span>최종 결제금액 </span>
-                                <span><p class="price"><fmt:formatNumber value="${total}" pattern="₩ ###,###" /></p></span>
+                                <span id="final_total">최종 결제 금액 </span>
+                                <span id="final_total2"><p class="price"><fmt:formatNumber value="${total}" pattern="₩ ###,###" /></p></span>
                             </div>
                             <div class="verified-icon">
                                 <img src="/img/card.jpg">

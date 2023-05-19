@@ -2,6 +2,28 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
+<style>
+
+  #size, #size2{
+    width: 400px;
+    height: 300px;
+    margin: -2px -2px -10px 15px;
+  }
+  #details, #reviews{
+    display: flex;
+  }
+
+  #detail_title{
+    font-weight: bold;
+    font-size: larger;
+    margin-bottom: 8px;
+  }
+
+   .tab-pane.fade {
+     display: none;
+   }
+</style>
+
 <!-- header 구간  -->
 <jsp:include page="/views/header.jsp" />
 
@@ -119,253 +141,195 @@
         </form>
       </div>
     </div>
-    <div class="row">
-      <div class="col-xs-12">
-        <div class="tabCommon mt-20">
-          <ul class="nav nav-tabs">
-            <li class="active"><a data-toggle="tab" href="#details" aria-expanded="true">Details</a></li>
-            <li class=""><a data-toggle="tab" href="#reviews" aria-expanded="false">Reviews (3)</a></li>
-          </ul>
-          <div class="tab-content patternbg">
-            <div id="details" class="tab-pane fade active in">
-              <h4>Product Description</h4>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut per spici</p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis delectus quidem repudiandae veniam distinctio repellendus magni pariatur molestiae asperiores animi, eos quod iusto hic doloremque iste a, nisi iure at unde molestias enim fugit, nulla voluptatibus. Deserunt voluptate tempora aut illum harum, deleniti laborum animi neque, praesentium explicabo, debitis ipsa?</p>
-            </div>
-            <div id="reviews" class="tab-pane fade">
-              <div class="post-comments">
-                <ul class="media-list comments-list m-bot-50 clearlist">
-                  <!-- Comment Item start-->
-                  <li class="media">
 
-                    <a class="pull-left" href="#!">
-                      <img class="media-object comment-avatar" src="images/blog/avater-1.jpg" alt="" width="50" height="50" />
-                    </a>
+<%--  반지 사이즈  --%>
+<%--    <div class="row">--%>
+<%--      <div class="col-xs-12">--%>
+<%--        <div class="tabCommon mt-20">--%>
+<%--          <ul class="nav nav-tabs">--%>
+<%--            <li class=""><a data-toggle="tab" href="#details" aria-expanded="false">반지 사이즈</a></li>--%>
+<%--            <li class="active"><a data-toggle="tab" href="#reviews" aria-expanded="true">팔찌 사이즈</a></li>--%>
+<%--          </ul>--%>
+<%--          <div class="tab-content patternbg">--%>
+<%--            <span id="detail_title">제품 구매 시 참고사항</span>--%>
+<%--            <div id="details" class="tab-pane fade">--%>
+<%--              <br>--%>
+<%--              <table class="table table-hover">--%>
+<%--                <colgroup>--%>
+<%--                  <col width="50%">--%>
+<%--                  <col width="50%">--%>
+<%--                </colgroup>--%>
+<%--                <thead>--%>
+<%--                <tr>--%>
+<%--                  <th>사이즈</th>--%>
+<%--                  <th>안쪽 둘레(mm)</th>--%>
+<%--                </tr>--%>
+<%--                </thead>--%>
+<%--                <tbody>--%>
+<%--                <tr>--%>
+<%--                  <td>3</td>--%>
+<%--                  <td>42.9</td>--%>
+<%--                </tr>--%>
+<%--                <tr>--%>
+<%--                  <td>4</td>--%>
+<%--                  <td>46.8</td>--%>
+<%--                </tr>--%>
+<%--                <tr>--%>
+<%--                  <td>5</td>--%>
+<%--                  <td>49.3</td>--%>
+<%--                </tr>--%>
+<%--                <tr>--%>
+<%--                  <td>6</td>--%>
+<%--                  <td>51.9</td>--%>
+<%--                </tr>--%>
+<%--                <tr>--%>
+<%--                  <td>7</td>--%>
+<%--                  <td>54.4</td>--%>
+<%--                </tr>--%>
+<%--                <tr>--%>
+<%--                  <td>8</td>--%>
+<%--                  <td>57.0</td>--%>
+<%--                </tr>--%>
+<%--                <tr>--%>
+<%--                  <td>9</td>--%>
+<%--                  <td>59.5</td>--%>
+<%--                </tr>--%>
+<%--                </tbody>--%>
+<%--              </table>--%>
+<%--              <img id="size" class="media-object comment-avatar" src="/img/size1.jpg" />--%>
+<%--            </div>--%>
+<%--          </div>--%>
+<%--            <div id="reviews" class="tab-pane fade in active">--%>
+<%--                <table class="table table-hover">--%>
+<%--                  <colgroup>--%>
+<%--                    <col width="50%">--%>
+<%--                    <col width="50%">--%>
+<%--                  </colgroup>--%>
+<%--                  <thead>--%>
+<%--                  <tr>--%>
+<%--                    <th>사이즈</th>--%>
+<%--                    <th>안쪽 둘레(mm)</th>--%>
+<%--                  </tr>--%>
+<%--                  </thead>--%>
+<%--                  <tbody>--%>
+<%--                  <tr>--%>
+<%--                    <td>XS</td>--%>
+<%--                    <td>150</td>--%>
+<%--                  </tr>--%>
+<%--                  <tr>--%>
+<%--                    <td>S</td>--%>
+<%--                    <td>160</td>--%>
+<%--                  </tr>--%>
+<%--                  <tr>--%>
+<%--                    <td>M</td>--%>
+<%--                    <td>170</td>--%>
+<%--                  </tr>--%>
+<%--                  <tr>--%>
+<%--                    <td>L</td>--%>
+<%--                    <td>180</td>--%>
+<%--                  </tr>--%>
+<%--                  </tbody>--%>
+<%--                </table>--%>
+<%--                <img id="size2" class="media-object comment-avatar" src="/img/size2.jpg" />--%>
 
-                    <div class="media-body">
-                      <div class="comment-info">
-                        <h4 class="comment-author">
-                          <a href="#!">Jonathon Andrew</a>
-
-                        </h4>
-                        <time datetime="2013-04-06T13:53">July 02, 2015, at 11:34</time>
-                        <a class="comment-button" href="#!"><i class="tf-ion-chatbubbles"></i>Reply</a>
-                      </div>
-
-                      <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at magna ut ante eleifend eleifend.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod laborum minima, reprehenderit laboriosam officiis praesentium? Impedit minus provident assumenda quae.
-                      </p>
-                    </div>
-
-                  </li>
-                  <!-- End Comment Item -->
-
-                  <!-- Comment Item start-->
-                  <li class="media">
-
-                    <a class="pull-left" href="#!">
-                      <img class="media-object comment-avatar" src="images/blog/avater-4.jpg" alt="" width="50" height="50" />
-                    </a>
-
-                    <div class="media-body">
-
-                      <div class="comment-info">
-                        <div class="comment-author">
-                          <a href="#!">Jonathon Andrew</a>
-                        </div>
-                        <time datetime="2013-04-06T13:53">July 02, 2015, at 11:34</time>
-                        <a class="comment-button" href="#!"><i class="tf-ion-chatbubbles"></i>Reply</a>
-                      </div>
-
-                      <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at magna ut ante eleifend eleifend. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni natus, nostrum iste non delectus atque ab a accusantium optio, dolor!
-                      </p>
-
-                    </div>
-
-                  </li>
-                  <!-- End Comment Item -->
-
-                  <!-- Comment Item start-->
-                  <li class="media">
-
-                    <a class="pull-left" href="#!">
-                      <img class="media-object comment-avatar" src="images/blog/avater-1.jpg" alt="" width="50" height="50">
-                    </a>
-
-                    <div class="media-body">
-
-                      <div class="comment-info">
-                        <div class="comment-author">
-                          <a href="#!">Jonathon Andrew</a>
-                        </div>
-                        <time datetime="2013-04-06T13:53">July 02, 2015, at 11:34</time>
-                        <a class="comment-button" href="#!"><i class="tf-ion-chatbubbles"></i>Reply</a>
-                      </div>
-
-                      <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at magna ut ante eleifend eleifend.
-                      </p>
-
-                    </div>
-
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+<%--            </div>--%>
+<%--          </div>--%>
+<%--        </div>--%>
+<%--      </div>--%>
+<%--    </div>--%>
 </section>
+
+<%-- 다른상품 더보기로 나오는 샘플 4가지 상품 구간 --%>
 <section class="products related-products section">
   <div class="container">
     <div class="row">
-      <div class="title text-center">
-        <h2>Related Products</h2>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-3">
-        <div class="product-item">
-          <div class="product-thumb">
-            <span class="bage">Sale</span>
-            <img class="img-responsive" src="images/shop/products/product-5.jpg" alt="product-img" />
-            <div class="preview-meta">
-              <ul>
-                <li>
-									<span  data-toggle="modal" data-target="#product-modal">
-										<i class="tf-ion-ios-search"></i>
-									</span>
-                </li>
-                <li>
-                  <a href="#" ><i class="tf-ion-ios-heart"></i></a>
-                </li>
-                <li>
-                  <a href="#!"><i class="tf-ion-android-cart"></i></a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="product-content">
-            <h4><a href="product-single.html">Reef Boardsport</a></h4>
-            <p class="price">$200</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="product-item">
-          <div class="product-thumb">
-            <img class="img-responsive" src="images/shop/products/product-1.jpg" alt="product-img" />
-            <div class="preview-meta">
-              <ul>
-                <li>
-									<span  data-toggle="modal" data-target="#product-modal">
-										<i class="tf-ion-ios-search-strong"></i>
-									</span>
-                </li>
-                <li>
-                  <a href="#" ><i class="tf-ion-ios-heart"></i></a>
-                </li>
-                <li>
-                  <a href="#!"><i class="tf-ion-android-cart"></i></a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="product-content">
-            <h4><a href="product-single.html">Rainbow Shoes</a></h4>
-            <p class="price">$200</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="product-item">
-          <div class="product-thumb">
-            <img class="img-responsive" src="images/shop/products/product-2.jpg" alt="product-img" />
-            <div class="preview-meta">
-              <ul>
-                <li>
-									<span  data-toggle="modal" data-target="#product-modal">
-										<i class="tf-ion-ios-search"></i>
-									</span>
-                </li>
-                <li>
-                  <a href="#" ><i class="tf-ion-ios-heart"></i></a>
-                </li>
-                <li>
-                  <a href="#!"><i class="tf-ion-android-cart"></i></a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="product-content">
-            <h4><a href="product-single.html">Strayhorn SP</a></h4>
-            <p class="price">$230</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="product-item">
-          <div class="product-thumb">
-            <img class="img-responsive" src="images/shop/products/product-3.jpg" alt="product-img" />
-            <div class="preview-meta">
-              <ul>
-                <li>
-									<span  data-toggle="modal" data-target="#product-modal">
-										<i class="tf-ion-ios-search"></i>
-									</span>
-                </li>
-                <li>
-                  <a href="#" ><i class="tf-ion-ios-heart"></i></a>
-                </li>
-                <li>
-                  <a href="#!"><i class="tf-ion-android-cart"></i></a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="product-content">
-            <h4><a href="product-single.html">Bradley Mid</a></h4>
-            <p class="price">$200</p>
-          </div>
-        </div>
-      </div>
 
+      <div class="title text-center">
+        <h2>함께 보면 좋은 상품</h2>
+      </div>
     </div>
-  </div>
+
+      <div class="row">
+        <c:forEach  var="obj" items="${allproduct}" varStatus="status" begin="1" end="4" >
+        <div class="col-md-3">
+
+              <div class="product-item">
+
+                <div class="product-thumb">
+                  <img class="img-responsive" src="/img/${obj.product_imgname}" alt="product-img" />
+                  <div class="preview-meta">
+                    <ul>
+                      <li>
+                                          <span  data-toggle="modal" data-target="#product-modal${obj.product_id}">
+                                              <i class="tf-ion-ios-search"></i>
+                                          </span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="product-content">
+                  <h4><a href="product-single.html">${obj.product_name}</a></h4>
+                  <p class="price"><fmt:formatNumber value="${obj.product_price}" type="number" pattern="₩ ###,###" /></p>
+                  </p>
+                </div>
+
+              </div>
+
+        </div>
+        </c:forEach>
+      </div>
+    </div>
 </section>
 
 
 
-<!-- Modal -->
-<div class="modal product-modal fade" id="product-modal">
-  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-    <i class="tf-ion-close"></i>
-  </button>
-  <div class="modal-dialog " role="document">
-    <div class="modal-content">
-      <div class="modal-body">
-        <div class="row">
-          <div class="col-md-8">
-            <div class="modal-image">
-              <img class="img-responsive" src="images/shop/products/modal-product.jpg" />
-            </div>
-          </div>
-          <div class="col-md-3">
-            <div class="product-short-details">
-              <h2 class="product-title">GM Pendant, Basalt Grey</h2>
-              <p class="product-price">$200</p>
-              <p class="product-short-description">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem iusto nihil cum. Illo laborum numquam rem aut officia dicta cumque.
-              </p>
-              <a href="#!" class="btn btn-main">Add To Cart</a>
-              <a href="#!" class="btn btn-transparent">View Product Details</a>
-            </div>
+<!-- Modal창 팝업을 통한 상품 상세보기 forEach 한번 더! -->
+<c:forEach  var="obj" items="${allproduct}" >
+  <div class="modal product-modal fade" id="product-modal${obj.product_id}">
+      <%-- 위에서 선언한 #product-modal 와 똑같이 써야 해당 제품의 상세정보  --%>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+      <i class="tf-ion-close"></i>
+    </button>
+    <div class="modal-dialog " role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="row">
+            <form id="cart_form" action="/addcart" method="get">
+              <div class="col-md-8 col-sm-6 col-xs-12">
+                <div class="modal-image">
+                  <img class="img-responsive" src="/img/${obj.product_imgname}" alt="product-img" />
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-6 col-xs-12">
+                <div class="product-short-details">
+                  <input type="hidden" name="user_id" value="${loginuser.user_id}"/>
+                  <input type="hidden" name="product_id" value="${obj.product_id}"/>
+                  <h2 class="product-title">${obj.product_name}</h2>
+                  <p class="product-price"><fmt:formatNumber value="${obj.product_price}" type="number" pattern="₩ ###,###" /></p>
+                  <input type="number" class="form-control" id="cart_quantity" name="cart_quantity" placeholder="수량을 선택하세요" >
+                  <p class="product-short-description">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem iusto nihil cum. Illo laborum numquam rem aut officia dicta cumque.
+                  </p>
+                    <%--  페이지 변환 방식.(ajax로 데이터 보내는 방식 아님..)  --%>
+                    <%--  미로그인 고객 : 장바구니 담기 클릭 시 login 이동  --%>
+                    <%--  로그인 고객 : 장바구니 담기 클릭 시 cart로 자동 담김.  --%>
+                  <c:choose>
+                    <c:when test="${loginuser == null}">
+                      <a href="/shop/detail?product_id=${obj.product_id}" class="btn btn-transparent">상품 자세히보기</a>
+                      <a href="/login" class="btn btn-main btn-large"> 장바구니에 담기</a>
+                    </c:when>
+                    <c:otherwise>
+                      <a href="/shop/detail?product_id=${obj.product_id}" class="btn btn-transparent">상품 자세히보기</a>
+                      <button type="submit" class="btn btn-main default" id="cart_addbtn"> 장바구니에 담기</button>
+                    </c:otherwise>
+                  </c:choose>
+
+                </div>
+              </div>
+            </form>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</div>
+  </div><!-- /.modal -->
+</c:forEach>

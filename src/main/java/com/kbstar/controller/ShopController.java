@@ -193,13 +193,17 @@ public class ShopController {
     @RequestMapping("/detail")
     public String detail(Model model, int product_id) throws Exception {
         Productdetail productdetail = null;
-
+        List<Product> list = null;
         try {
             productdetail = productdetailService.getselectdetail(product_id);
+
+            list = productService.get();
         } catch (Exception e) {
             throw new Exception("상품 세부내용 조회 중 오류가 발생했습니다.");
         }
         model.addAttribute("detail", productdetail);
+        // list에 담은 Product를 상세보기 화면 맨 아래에 보여주기(jsp파일에 입력 시 명칭 allproduct)
+        model.addAttribute("allproduct", list);
         model.addAttribute("center", dir + "detail");
         return "index";
     }
