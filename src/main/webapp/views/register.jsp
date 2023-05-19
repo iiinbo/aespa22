@@ -66,7 +66,6 @@
                         <label for="user_contact" class="col-lg-2 control-label">전화번호</label>
                         <div class="col-lg-10">
                             <input type="text" class="form-control" id="user_contact" name="user_contact" placeholder="전화번호를 입력하세요." required>
-                            git
                         </div>
 
                     </div>
