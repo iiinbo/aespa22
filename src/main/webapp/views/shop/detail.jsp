@@ -19,9 +19,7 @@
     margin-bottom: 8px;
   }
 
-   .tab-pane.fade {
-     display: none;
-   }
+
 </style>
 
 <!-- header 구간  -->
@@ -143,62 +141,62 @@
     </div>
 
 <%--  반지 사이즈  --%>
-<%--    <div class="row">--%>
-<%--      <div class="col-xs-12">--%>
-<%--        <div class="tabCommon mt-20">--%>
-<%--          <ul class="nav nav-tabs">--%>
-<%--            <li class=""><a data-toggle="tab" href="#details" aria-expanded="false">반지 사이즈</a></li>--%>
-<%--            <li class="active"><a data-toggle="tab" href="#reviews" aria-expanded="true">팔찌 사이즈</a></li>--%>
-<%--          </ul>--%>
-<%--          <div class="tab-content patternbg">--%>
-<%--            <span id="detail_title">제품 구매 시 참고사항</span>--%>
-<%--            <div id="details" class="tab-pane fade">--%>
-<%--              <br>--%>
-<%--              <table class="table table-hover">--%>
-<%--                <colgroup>--%>
-<%--                  <col width="50%">--%>
-<%--                  <col width="50%">--%>
-<%--                </colgroup>--%>
-<%--                <thead>--%>
-<%--                <tr>--%>
-<%--                  <th>사이즈</th>--%>
-<%--                  <th>안쪽 둘레(mm)</th>--%>
-<%--                </tr>--%>
-<%--                </thead>--%>
-<%--                <tbody>--%>
-<%--                <tr>--%>
-<%--                  <td>3</td>--%>
-<%--                  <td>42.9</td>--%>
-<%--                </tr>--%>
-<%--                <tr>--%>
-<%--                  <td>4</td>--%>
-<%--                  <td>46.8</td>--%>
-<%--                </tr>--%>
-<%--                <tr>--%>
-<%--                  <td>5</td>--%>
-<%--                  <td>49.3</td>--%>
-<%--                </tr>--%>
-<%--                <tr>--%>
-<%--                  <td>6</td>--%>
-<%--                  <td>51.9</td>--%>
-<%--                </tr>--%>
-<%--                <tr>--%>
-<%--                  <td>7</td>--%>
-<%--                  <td>54.4</td>--%>
-<%--                </tr>--%>
-<%--                <tr>--%>
-<%--                  <td>8</td>--%>
-<%--                  <td>57.0</td>--%>
-<%--                </tr>--%>
-<%--                <tr>--%>
-<%--                  <td>9</td>--%>
-<%--                  <td>59.5</td>--%>
-<%--                </tr>--%>
-<%--                </tbody>--%>
-<%--              </table>--%>
-<%--              <img id="size" class="media-object comment-avatar" src="/img/size1.jpg" />--%>
-<%--            </div>--%>
-<%--          </div>--%>
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="tabCommon mt-20">
+          <ul class="nav nav-tabs">
+            <li class=""><a data-toggle="tab" href="#details" aria-expanded="true">사이즈 참고</a></li>
+<%--            <li class="active"><a data-toggle="tab" href="#reviews" aria-expanded="true"></a></li>--%>
+          </ul>
+          <div class="tab-content patternbg">
+            <span id="detail_title">제품 구매 시 참고사항</span>
+            <div id="details" class="tab-pane">
+              <br>
+              <table class="table table-hover">
+                <colgroup>
+                  <col width="50%">
+                  <col width="50%">
+                </colgroup>
+                <thead>
+                <tr>
+                  <th>사이즈</th>
+                  <th>안쪽 둘레(mm)</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                  <td>3</td>
+                  <td>42.9</td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>46.8</td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td>49.3</td>
+                </tr>
+                <tr>
+                  <td>6</td>
+                  <td>51.9</td>
+                </tr>
+                <tr>
+                  <td>7</td>
+                  <td>54.4</td>
+                </tr>
+                <tr>
+                  <td>8</td>
+                  <td>57.0</td>
+                </tr>
+                <tr>
+                  <td>9</td>
+                  <td>59.5</td>
+                </tr>
+                </tbody>
+              </table>
+              <img id="size" class="media-object comment-avatar" src="/img/size1.jpg" />
+            </div>
+          </div>
 <%--            <div id="reviews" class="tab-pane fade in active">--%>
 <%--                <table class="table table-hover">--%>
 <%--                  <colgroup>--%>
@@ -233,10 +231,10 @@
 <%--                <img id="size2" class="media-object comment-avatar" src="/img/size2.jpg" />--%>
 
 <%--            </div>--%>
-<%--          </div>--%>
-<%--        </div>--%>
-<%--      </div>--%>
-<%--    </div>--%>
+          </div>
+        </div>
+      </div>
+    </div>
 </section>
 
 <%-- 다른상품 더보기로 나오는 샘플 4가지 상품 구간 --%>
